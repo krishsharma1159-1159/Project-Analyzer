@@ -8,6 +8,7 @@ import pdfplumber
 from docx import Document
 import google.generativeai as genai
 from dotenv import load_dotenv
+import main
 
 # ---------- Setup ----------
 logging.basicConfig(level=logging.INFO)
