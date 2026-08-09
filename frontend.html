@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Portfolio Generator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f9f9f9",
+                    "surface-container-low": "#f3f3f3",
+                    "tertiary": "#923357",
+                    "outline-variant": "#bfcaba",
+                    "on-surface": "#1a1c1c",
+                    "surface-container-high": "#e8e8e8",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#1b6d24",
+                    "secondary-container": "#e2dfde",
+                    "on-tertiary-fixed": "#3f001c",
+                    "error": "#ba1a1a",
+                    "surface-container": "#eeeeee",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-fixed": "#a3f69c",
+                    "on-primary-container": "#cbffc2",
+                    "outline": "#707a6c",
+                    "primary": "#0d631b",
+                    "surface-variant": "#e2e2e2",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "inverse-primary": "#88d982",
+                    "on-secondary-container": "#636262",
+                    "tertiary-fixed-dim": "#ffb1c7",
+                    "on-secondary-fixed-variant": "#474746",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffd9e2",
+                    "primary-fixed-dim": "#88d982",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#40493d",
+                    "tertiary-container": "#b14b6f",
+                    "on-primary-fixed": "#002204",
+                    "on-primary-fixed-variant": "#005312",
+                    "on-background": "#1a1c1c",
+                    "surface-bright": "#f9f9f9",
+                    "on-tertiary-container": "#ffedf0",
+                    "surface-container-highest": "#e2e2e2",
+                    "inverse-on-surface": "#f1f1f1",
+                    "primary-container": "#2e7d32",
+                    "surface": "#f9f9f9",
+                    "secondary": "#5f5e5e",
+                    "on-tertiary-fixed-variant": "#7f2448",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2f3131"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "stack-gap-md": "24px",
+                    "container-max": "1280px",
+                    "gutter": "32px",
+                    "section-padding-lg": "160px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "display": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-sm": [
+                            "JetBrains Mono"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display": [
+                            "72px",
+                            {
+                                    "lineHeight": "80px",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 1;
+        }
+        .ghost-border {
+            border: 1px solid #E5E5E5;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface-container-low font-body-md text-body-md docked full-width top-0 w-full z-50">
+<div class="flex justify-between items-center h-20 px-gutter w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface">AI Portfolio</div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-secondary dark:text-on-secondary-fixed-variant hover:text-primary transition-colors duration-200" href="#features">Features</a>
+<a class="text-secondary dark:text-on-secondary-fixed-variant hover:text-primary transition-colors duration-200" href="#templates">Templates</a>
+<a class="text-secondary dark:text-on-secondary-fixed-variant hover:text-primary transition-colors duration-200" href="#pricing">Pricing</a>
+<a class="text-secondary dark:text-on-secondary-fixed-variant hover:text-primary transition-colors duration-200" href="#faq">FAQ</a>
+</div>
+<button class="bg-primary-container text-on-primary font-bold py-2 px-6 rounded-lg hover:opacity-90 transition-opacity hidden md:block">Get Started</button>
+<button class="md:hidden text-secondary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="pt-section-padding-lg pb-32 px-margin-mobile md:px-gutter max-w-container-max mx-auto text-center">
+<h1 class="font-display text-display text-on-surface mb-6 mx-auto max-w-4xl">Generate your Portfolio Website from your Resume</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-12 max-w-2xl mx-auto">Upload your resume and let our AI instantly craft a professional, fully-responsive portfolio tailored to your unique career path. No coding, no hassle.</p>
+<!-- Upload Area -->
+<div class="max-w-2xl mx-auto bg-surface-container-lowest rounded-2xl p-12 ghost-border border-dashed border-2 hover:border-primary-container transition-colors cursor-pointer group" id="upload-dropzone">
+<div class="flex flex-col items-center justify-center space-y-4" id="upload-idle-state">
+<span class="material-symbols-outlined text-6xl text-surface-tint group-hover:scale-110 transition-transform">upload_file</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Drop your resume here</h3>
+<p class="font-body-md text-body-md text-secondary">Supports PDF, TXT, DOCX up to 10MB</p>
+<button class="mt-4 bg-primary-container text-on-primary font-bold py-3 px-8 rounded-lg" id="browse-btn" type="button">Browse Files</button>
+<input accept=".pdf,.txt,.docx" class="hidden" id="resume-file-input" type="file"/>
+</div>
+<div class="hidden flex-col items-center justify-center space-y-4" id="upload-loading-state">
+<span class="material-symbols-outlined text-6xl text-surface-tint animate-spin">progress_activity</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Reading your resume…</h3>
+<p class="font-body-md text-body-md text-secondary" id="upload-loading-filename">This usually takes a few seconds.</p>
+</div>
+<div class="hidden flex-col items-center justify-center space-y-4" id="upload-error-state">
+<span class="material-symbols-outlined text-6xl text-error">error</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Something went wrong</h3>
+<p class="font-body-md text-body-md text-secondary" id="upload-error-message">Please try again.</p>
+<button class="mt-4 bg-primary-container text-on-primary font-bold py-3 px-8 rounded-lg" id="retry-btn" type="button">Try Again</button>
+</div>
+<div class="hidden flex-col items-center justify-center space-y-4" id="upload-success-state">
+<span class="material-symbols-outlined text-6xl text-primary">check_circle</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Resume parsed!</h3>
+<p class="font-body-md text-body-md text-secondary">Pick a template below to preview your portfolio.</p>
+</div>
+</div>
+</section>
+<!-- Template Selection Section -->
+<section class="py-section-padding-lg px-margin-mobile md:px-gutter bg-surface-container-low" id="templates">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Choose your style</h2>
+<p class="font-body-lg text-body-lg text-secondary">Start with a foundation crafted by professional designers.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8" id="template-grid">
+<!-- Template 1 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 ghost-border flex flex-col h-full hover:shadow-[0px_10px_40px_rgba(0,0,0,0.04)] transition-shadow">
+<div class="bg-surface-container w-full h-32 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-surface-tint">business_center</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">The Professional</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-grow">A clean, structured layout perfect for engineers and corporate roles.</p>
+<button class="template-select-btn w-full bg-surface-container-lowest text-on-surface font-bold py-3 px-6 rounded-lg ghost-border hover:bg-surface-container-low transition-colors disabled:opacity-40 disabled:cursor-not-allowed" data-template="portfolio1.html" disabled="" type="button">Select Template</button>
+</div>
+<!-- Template 2 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 ghost-border flex flex-col h-full hover:shadow-[0px_10px_40px_rgba(0,0,0,0.04)] transition-shadow">
+<div class="bg-surface-container w-full h-32 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-surface-tint">palette</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">The Editorial</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-grow">A bold, image-heavy layout for designers and creative directors.</p>
+<button class="template-select-btn w-full bg-surface-container-lowest text-on-surface font-bold py-3 px-6 rounded-lg ghost-border hover:bg-surface-container-low transition-colors disabled:opacity-40 disabled:cursor-not-allowed" data-template="portfolio2.html" disabled="" type="button">Select Template</button>
+</div>
+<!-- Template 3 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 ghost-border flex flex-col h-full hover:shadow-[0px_10px_40px_rgba(0,0,0,0.04)] transition-shadow">
+<div class="bg-surface-container w-full h-32 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-surface-tint">rocket_launch</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">The Founder</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-grow">A bold, high-contrast layout for founders, product leads and builders.</p>
+<button class="template-select-btn w-full bg-surface-container-lowest text-on-surface font-bold py-3 px-6 rounded-lg ghost-border hover:bg-surface-container-low transition-colors disabled:opacity-40 disabled:cursor-not-allowed" data-template="portfolio3.html" disabled="" type="button">Select Template</button>
+</div>
+<!-- Template 4 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 ghost-border flex flex-col h-full hover:shadow-[0px_10px_40px_rgba(0,0,0,0.04)] transition-shadow">
+<div class="bg-surface-container w-full h-32 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-surface-tint">science</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">The Researcher</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-grow">A calm, paper-like layout ideal for researchers, writers and academics.</p>
+<button class="template-select-btn w-full bg-surface-container-lowest text-on-surface font-bold py-3 px-6 rounded-lg ghost-border hover:bg-surface-container-low transition-colors disabled:opacity-40 disabled:cursor-not-allowed" data-template="portfolio4.html" disabled="" type="button">Select Template</button>
+</div>
+</div>
+<p class="text-center font-body-md text-body-md text-secondary mt-8" id="template-hint">Upload your resume above to unlock template selection.</p>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-section-padding-lg px-margin-mobile md:px-gutter" id="features">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Why choose AI Portfolio?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl text-surface-tint">bolt</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Instant Results</h3>
+<p class="font-body-md text-body-md text-secondary">From upload to a fully functioning website in less than 60 seconds.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl text-surface-tint">code_off</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">No Coding Required</h3>
+<p class="font-body-md text-body-md text-secondary">Our intuitive interface lets you customize everything without touching a single line of code.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl text-surface-tint">work</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Tailored to your Industry</h3>
+<p class="font-body-md text-body-md text-secondary">The AI analyzes your experience to highlight the metrics that matter most in your field.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-padding-lg px-margin-mobile md:px-gutter bg-surface-container-low" id="faq">
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Frequently Asked Questions</h2>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-headline-md text-headline-md text-on-surface text-xl">Is my data secure?</h4>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">expand_more</span>
+</div>
+<div class="mt-4 hidden">
+<p class="font-body-md text-body-md text-secondary">Yes, we prioritize your privacy. Your resume data is only used to generate your portfolio and is never sold to third parties.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-headline-md text-headline-md text-on-surface text-xl">Can I customize the generated portfolio?</h4>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">expand_more</span>
+</div>
+<div class="mt-4 hidden">
+<p class="font-body-md text-body-md text-secondary">Absolutely. Once the AI generates your initial site, you have full control to edit text, swap images, and tweak the layout.</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-headline-md text-headline-md text-on-surface text-xl">Can I use my own domain name?</h4>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">expand_more</span>
+</div>
+<div class="mt-4 hidden">
+<p class="font-body-md text-body-md text-secondary">Yes, paid plans allow you to connect a custom domain to your portfolio website.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest w-full py-stack-gap-md px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center font-label-sm text-label-sm">
+<div class="font-headline-md text-headline-md font-bold text-on-surface mb-4 md:mb-0">
+            AI Portfolio
+        </div>
+<div class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+<a class="text-on-secondary-container hover:text-primary underline opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-on-secondary-container hover:text-primary underline opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-on-secondary-container hover:text-primary underline opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+<a class="text-on-secondary-container hover:text-primary underline opacity-80 hover:opacity-100 transition-opacity" href="#">Twitter</a>
+<a class="text-on-secondary-container hover:text-primary underline opacity-80 hover:opacity-100 transition-opacity" href="#">LinkedIn</a>
+</div>
+<div class="text-primary dark:text-primary-fixed">
+            © 2024 AI Portfolio Generator. All rights reserved.
+        </div>
+</footer>
+<script>
+        // ---------- Resume upload -> Flask backend -> template unlock ----------
+        const API_URL = '/generate-portfolio'; // same-origin now that Flask serves the frontend too
+
+        const dropzone = document.getElementById('upload-dropzone');
+        const fileInput = document.getElementById('resume-file-input');
+        const browseBtn = document.getElementById('browse-btn');
+        const retryBtn = document.getElementById('retry-btn');
+
+        const idleState = document.getElementById('upload-idle-state');
+        const loadingState = document.getElementById('upload-loading-state');
+        const errorState = document.getElementById('upload-error-state');
+        const successState = document.getElementById('upload-success-state');
+        const loadingFilename = document.getElementById('upload-loading-filename');
+        const errorMessage = document.getElementById('upload-error-message');
+        const templateHint = document.getElementById('template-hint');
+
+        function showState(state) {
+            [idleState, loadingState, errorState, successState].forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('flex');
+            });
+            state.classList.remove('hidden');
+            state.classList.add('flex');
+        }
+
+        browseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fileInput.click();
+        });
+
+        dropzone.addEventListener('click', () => fileInput.click());
+
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('border-primary-container');
+        });
+        dropzone.addEventListener('dragleave', () => dropzone.classList.remove('border-primary-container'));
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('border-primary-container');
+            if (e.dataTransfer.files.length) uploadResume(e.dataTransfer.files[0]);
+        });
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length) uploadResume(fileInput.files[0]);
+        });
+
+        retryBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fileInput.value = '';
+            showState(idleState);
+        });
+
+        async function uploadResume(file) {
+            const allowed = ['txt', 'pdf', 'docx'];
+            const ext = file.name.split('.').pop().toLowerCase();
+            if (!allowed.includes(ext)) {
+                errorMessage.textContent = 'Please upload a .txt, .pdf, or .docx file.';
+                showState(errorState);
+                return;
+            }
+
+            loadingFilename.textContent = `Parsing "${file.name}"…`;
+            showState(loadingState);
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch(API_URL, { method: 'POST', body: formData });
+                const data = await response.json();
+
+                if (!response.ok || data.error) {
+                    errorMessage.textContent = data.error || 'The server could not process this resume.';
+                    showState(errorState);
+                    return;
+                }
+
+                // Save the structured resume JSON for the template pages to read
+                sessionStorage.setItem('resumeData', JSON.stringify(data));
+
+                showState(successState);
+                unlockTemplates();
+                document.getElementById('templates').scrollIntoView({ behavior: 'smooth' });
+            } catch (err) {
+                console.error(err);
+                errorMessage.textContent = 'Could not reach the server. Is the Flask backend running?';
+                showState(errorState);
+            }
+        }
+
+        function unlockTemplates() {
+            document.querySelectorAll('.template-select-btn').forEach(btn => btn.disabled = false);
+            templateHint.textContent = 'Great — pick a template to preview your portfolio.';
+        }
+
+        document.querySelectorAll('.template-select-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.disabled) return;
+                window.location.href = btn.getAttribute('data-template');
+            });
+        });
+
+        // Simple script to toggle FAQ accordions
+        document.querySelectorAll('#faq .bg-surface-container-lowest').forEach(item => {
+            item.addEventListener('click', () => {
+                const content = item.querySelector('.mt-4');
+                const icon = item.querySelector('.material-symbols-outlined');
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.textContent = 'expand_less';
+                } else {
+                    content.classList.add('hidden');
+                    icon.textContent = 'expand_more';
+                }
+            });
+        });
+    </script>
+</body></html>

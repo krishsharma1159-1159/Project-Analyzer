@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Professional Software Engineer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#60410c",
+                        "surface-tint": "#455f87",
+                        "on-surface": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "surface-container-low": "#f0f3ff",
+                        "primary-fixed-dim": "#adc8f5",
+                        "primary": "#022448",
+                        "primary-container": "#1e3a5f",
+                        "outline-variant": "#c4c6cf",
+                        "tertiary-fixed": "#ffddb2",
+                        "secondary": "#5c5f60",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface": "#f9f9ff",
+                        "inverse-surface": "#2a313d",
+                        "outline": "#74777f",
+                        "secondary-container": "#dee0e2",
+                        "on-secondary-fixed-variant": "#444749",
+                        "on-primary-container": "#8aa4cf",
+                        "surface-dim": "#d3daea",
+                        "secondary-fixed": "#e1e2e4",
+                        "on-secondary-container": "#606365",
+                        "on-primary-fixed": "#001c3b",
+                        "tertiary-fixed-dim": "#edbf7f",
+                        "secondary-fixed-dim": "#c5c6c8",
+                        "tertiary-container": "#503300",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f9f9ff",
+                        "on-background": "#151c27",
+                        "on-tertiary-container": "#c69b5f",
+                        "on-primary-fixed-variant": "#2d486d",
+                        "inverse-on-surface": "#ebf1ff",
+                        "primary-fixed": "#d5e3ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#341f00",
+                        "surface-container-highest": "#dce2f3",
+                        "on-surface-variant": "#43474e",
+                        "inverse-primary": "#adc8f5",
+                        "on-tertiary-fixed": "#291800",
+                        "surface-container-high": "#e2e8f8",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f9f9ff",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#dce2f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+        .timeline-line {
+            width: 2px;
+            background-color: #F3F4F6;
+        }
+        .timeline-node {
+            width: 8px;
+            height: 8px;
+            background-color: #022448;
+            border-radius: 50%;
+            left: -3px;
+        }
+        .soft-gray-bg {
+            background-color: #F3F4F6;
+        }
+        .soft-gray-border {
+            border-color: #F3F4F6;
+        }
+        body {
+            background-color: #FFFFFF;
+        }
+    </style>
+<script src="portfolio-render.js"></script>
+</head>
+<body class="antialiased text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface fixed top-0 w-full border-b border-outline-variant dark:border-outline z-50">
+<div class="flex justify-between items-center h-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary cursor-pointer">
+                DevPortfolio
+            </div>
+<div class="hidden md:flex space-x-8">
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer" href="#about">About</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer" href="#skills">Skills</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer" href="#projects">Projects</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer" href="#experience">Experience</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer" href="#education">Education</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer" href="#contact">Contact</a>
+</div>
+<button class="hidden md:block bg-primary-container text-on-primary font-body-md text-body-md px-6 py-2 rounded transition-colors duration-200 hover:bg-primary">
+                Resume
+            </button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-32 pb-24">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row items-center gap-12 py-section-gap fade-in-section is-visible" id="hero">
+<div class="w-full md:w-1/3 flex justify-center md:justify-start">
+<img alt="Profile Picture" class="w-64 h-64 object-cover rounded-full grayscale border-4 soft-gray-border" data-alt="A professional headshot of a software engineer in a clean, well-lit modern office space. The lighting is soft and natural, emphasizing a corporate minimalist aesthetic. The subject is wearing business casual attire, conveying confidence and approachability. The background is slightly blurred but unmistakably a high-end tech environment." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<div class="w-full md:w-2/3 space-y-6">
+<p class="font-label-md text-label-md text-secondary tracking-widest uppercase" data-field="name">Jordan Rivera</p>
+<h1 class="font-display text-display text-primary" data-field="title">Senior Software Engineer</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl" data-field="summary">
+                    Architecting scalable, resilient backend systems and elegant, performant user interfaces. Dedicated to clean code, robust testing, and driving engineering excellence across the full stack.
+                </p>
+<div class="flex gap-4 pt-4">
+<a class="bg-primary-container text-on-primary font-label-md text-label-md px-8 py-3 rounded hover:bg-primary transition-colors inline-block" data-link="links.portfolio" href="#">
+                        View Portfolio Link
+                    </a>
+<a class="border border-primary-container text-primary-container font-label-md text-label-md px-8 py-3 rounded hover:bg-surface-container-low transition-colors bg-transparent inline-block" data-link="email" href="#">
+                        Contact
+                    </a>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap fade-in-section" id="about">
+<div class="max-w-3xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">About</h2>
+<div class="space-y-6 font-body-md text-body-md text-secondary">
+<p data-field="summary">
+                        With over a decade of experience in software engineering, I specialize in building distributed systems and high-availability applications. My approach is rooted in solid engineering principles, prioritizing maintainability, testability, and performance.
+                    </p>
+<p data-field="location">
+                        Based in San Francisco, CA
+                    </p>
+</div>
+</div>
+</section>
+<!-- Technical Skills Section -->
+<section class="py-section-gap fade-in-section" id="skills">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12">Technical Skills</h2>
+<div class="grid grid-cols-1 gap-8">
+<div>
+<div class="flex flex-wrap gap-2" data-repeat-chips="skills">
+<span class="soft-gray-bg text-primary font-label-md text-caption px-3 py-1 rounded">TypeScript</span>
+<span class="soft-gray-bg text-primary font-label-md text-caption px-3 py-1 rounded">Python</span>
+<span class="soft-gray-bg text-primary font-label-md text-caption px-3 py-1 rounded">Go</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-section-gap fade-in-section" id="projects">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12">Projects</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project card template: cloned once per item in data.projects -->
+<div class="bg-white border soft-gray-border p-6 hover:border-outline transition-colors duration-300 flex flex-col h-full rounded" data-repeat="projects">
+<h3 class="font-headline-md text-headline-md text-primary mb-3" data-field="name">Distributed Ledger System</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-grow" data-field="description">
+                        Architected and deployed a highly scalable distributed ledger for processing financial transactions with microsecond latency and zero data loss guarantee.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-6" data-repeat-chips="tech">
+<span class="soft-gray-bg text-primary font-label-md text-caption px-2 py-1 rounded">Go</span>
+<span class="soft-gray-bg text-primary font-label-md text-caption px-2 py-1 rounded">Kafka</span>
+<span class="soft-gray-bg text-primary font-label-md text-caption px-2 py-1 rounded">PostgreSQL</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-section-gap fade-in-section" id="experience">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12">Experience</h2>
+<div class="space-y-8">
+<div class="border-l-2 soft-gray-border pl-6" data-repeat="experience">
+<h3 class="font-headline-md text-headline-md text-primary" data-field="role">Role</h3>
+<p class="font-label-md text-label-md text-secondary mb-2"><span data-field="company">Company</span> · <span data-field="duration">Duration</span></p>
+<p class="font-body-md text-body-md text-secondary" data-field="description">Description</p>
+</div>
+</div>
+</section>
+<!-- Education Section -->
+<section class="py-section-gap fade-in-section" id="education">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12">Education</h2>
+<div class="space-y-6">
+<div class="border-l-2 soft-gray-border pl-6" data-repeat="education">
+<h3 class="font-headline-md text-headline-md text-primary" data-field="degree">Degree</h3>
+<p class="font-label-md text-label-md text-secondary" data-field="institution">Institution</p>
+<p class="font-label-md text-label-md text-secondary" data-field="year">Year</p>
+</div>
+</div>
+</section>
+<!-- Achievements Section -->
+<section class="py-section-gap fade-in-section" id="achievements">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Achievements</h2>
+<ul class="list-disc list-inside space-y-2 font-body-md text-body-md text-secondary">
+<li data-repeat="achievements"><span data-field="."></span></li>
+</ul>
+</section>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface w-full py-12 border-t border-outline-variant dark:border-outline mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="font-label-md text-label-md text-secondary mb-4 md:mb-0">
+                    © 2024 DevPortfolio. Built with precision.
+                </div>
+<div class="flex space-x-6 font-caption text-caption text-secondary dark:text-secondary-fixed-dim">
+<a class="opacity-80 hover:opacity-100 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" data-link="links.github" href="#" target="_blank">GitHub</a>
+<a class="opacity-80 hover:opacity-100 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" data-link="links.linkedin" href="#" target="_blank">LinkedIn</a>
+<button class="opacity-80 hover:opacity-100 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" onclick="downloadPortfolio(document.title)">Download</button>
+</div>
+</div>
+</footer>
+</main>
+<script>
+        // Intersection Observer for fade-in animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

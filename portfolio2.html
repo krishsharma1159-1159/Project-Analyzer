@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELÉGANCE - Editorial Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-error": "#ffffff",
+                "on-secondary-fixed": "#1b1c14",
+                "surface-dim": "#dbdcc3",
+                "secondary-fixed-dim": "#c7c7ba",
+                "tertiary-fixed": "#ffe088",
+                "surface-container-highest": "#e4e4cc",
+                "on-tertiary-fixed-variant": "#574500",
+                "surface-bright": "#fbfbe2",
+                "on-tertiary-container": "#4f3e00",
+                "surface-container": "#efefd7",
+                "on-error-container": "#93000a",
+                "on-secondary-container": "#626458",
+                "surface-container-high": "#eaead1",
+                "tertiary-container": "#cca730",
+                "error-container": "#ffdad6",
+                "surface": "#fbfbe2",
+                "tertiary": "#735c00",
+                "secondary-container": "#e0e1d2",
+                "primary-fixed": "#e5e2e1",
+                "surface-container-low": "#f5f5dc",
+                "on-tertiary-fixed": "#241a00",
+                "tertiary-fixed-dim": "#e9c349",
+                "on-primary-fixed": "#1c1b1b",
+                "outline": "#747878",
+                "inverse-primary": "#c8c6c5",
+                "secondary": "#5e5f54",
+                "primary": "#000000",
+                "on-primary-container": "#858383",
+                "on-surface": "#1b1d0e",
+                "on-tertiary": "#ffffff",
+                "on-primary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "inverse-surface": "#303221",
+                "primary-fixed-dim": "#c8c6c5",
+                "primary-container": "#1c1b1b",
+                "secondary-fixed": "#e3e3d5",
+                "surface-tint": "#5f5e5e",
+                "on-primary-fixed-variant": "#474746",
+                "inverse-on-surface": "#f2f2d9",
+                "error": "#ba1a1a",
+                "surface-variant": "#e4e4cc",
+                "outline-variant": "#c4c7c7",
+                "background": "#fbfbe2",
+                "on-surface-variant": "#444748",
+                "on-secondary": "#ffffff",
+                "on-background": "#1b1d0e",
+                "on-secondary-fixed-variant": "#46483d"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-mobile": "24px",
+                "stack-lg": "48px",
+                "margin-desktop": "80px",
+                "stack-md": "16px",
+                "gutter": "32px",
+                "section-gap": "160px",
+                "stack-sm": "8px"
+        },
+        "fontFamily": {
+                "display-lg-mobile": [
+                        "Bodoni Moda"
+                ],
+                "headline-lg-mobile": [
+                        "Bodoni Moda"
+                ],
+                "label-caps": [
+                        "Montserrat"
+                ],
+                "display-lg": [
+                        "Bodoni Moda"
+                ],
+                "headline-lg": [
+                        "Bodoni Moda"
+                ],
+                "quote": [
+                        "Bodoni Moda"
+                ],
+                "body-lg": [
+                        "Montserrat"
+                ],
+                "headline-md": [
+                        "Bodoni Moda"
+                ],
+                "body-md": [
+                        "Montserrat"
+                ]
+        },
+        "fontSize": {
+                "display-lg-mobile": [
+                        "48px",
+                        {
+                                "lineHeight": "54px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "84px",
+                        {
+                                "lineHeight": "92px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "quote": [
+                        "24px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: #fbfbe2; /* surface */
+            color: #1a1a1a; /* primary */
+        }
+        .text-gold { color: #D4AF37; }
+        .bg-matte-black { background-color: #1A1A1A; }
+        .border-matte-black { border-color: #1A1A1A; }
+        .bg-ivory { background-color: #fbfbe2; }
+        .text-ivory { color: #fbfbe2; }
+        
+        .editorial-image-frame {
+            border: 1px solid #1A1A1A;
+            transition: all 0.5s ease-out;
+        }
+        .editorial-card:hover .editorial-image-frame {
+            transform: scale(0.98);
+            background-color: #F5F5DC;
+        }
+        .editorial-line {
+            height: 1px;
+            background-color: #1A1A1A;
+            width: 100%;
+        }
+        
+        /* Editorial specific styles */
+        .drop-cap:first-letter {
+            float: left;
+            font-size: 4rem;
+            line-height: 3rem;
+            padding-top: 0.5rem;
+            padding-right: 0.5rem;
+            font-family: "Bodoni Moda", serif;
+            color: #1A1A1A;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #1A1A1A;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -4px;
+            width: 9px;
+            height: 9px;
+            background-color: #D4AF37;
+            border-radius: 50%;
+        }
+
+        .outline-text {
+            color: transparent;
+            -webkit-text-stroke: 1px #1A1A1A;
+        }
+        
+        .timeline-year-outline {
+            -webkit-text-stroke: 1px #1A1A1A;
+            color: transparent;
+        }
+
+        /* Custom selection color */
+        ::selection {
+            background-color: #D4AF37;
+            color: #1A1A1A;
+        }
+
+        /* Animations */
+        @keyframes shimmer {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(200%); }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Parallax Container */
+        .parallax-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .parallax-image {
+            will-change: transform;
+            transform: scale(1.1);
+        }
+    </style>
+<script src="portfolio-render.js"></script>
+</head>
+<body class="antialiased w-full overflow-x-hidden font-body-md text-primary bg-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md bg-surface/90 backdrop-blur-sm border-b border-outline-variant">
+<a class="font-display-lg text-headline-md tracking-tighter text-primary hover:opacity-70 transition-opacity" href="#home">
+    ELÉGANCE
+</a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors duration-300" href="#home">Home</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors duration-300" href="#about">About</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors duration-300" href="#projects">Projects</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors duration-300" href="#experience">Experience</a>
+</nav>
+<button class="md:hidden text-primary cursor-pointer active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Main Content -->
+<main>
+<!-- Hero Section -->
+<section class="min-h-screen bg-matte-black flex flex-col justify-center relative pt-24 px-margin-mobile md:px-margin-desktop overflow-hidden" id="home">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-full w-full relative z-10 items-center">
+<!-- Text Column -->
+<div class="md:col-span-6 flex flex-col justify-center h-full z-20 fade-in-up">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-ivory mb-stack-sm" data-field="name">
+                ELÉGANCE
+            </h1>
+<p class="font-label-caps text-label-caps text-gold mb-stack-lg uppercase" data-field="title">
+                CREATIVE DIRECTOR &amp; ARCHITECT
+            </p>
+<p class="font-body-lg text-body-lg text-ivory max-w-md mb-stack-lg opacity-80" data-field="summary">
+                Crafting spaces and identities that resonate with timeless sophistication. A harmonious blend of structural rigor and artistic intuition.
+            </p>
+<div>
+<a class="inline-block bg-ivory text-primary font-label-caps text-label-caps px-8 py-4 uppercase tracking-widest hover:bg-gold hover:text-ivory transition-colors duration-300" href="#projects">
+                    Explore Works
+                </a>
+</div>
+</div>
+<!-- Image Column with Parallax -->
+<div class="md:col-span-6 h-[60vh] md:h-[80vh] relative mt-12 md:mt-0 flex justify-end items-center fade-in-up" style="transition-delay: 200ms;">
+<div class="relative w-full md:w-5/6 h-full border border-gold/30 p-4 parallax-container">
+<img alt="Portrait of Elegance" class="w-full h-full object-cover grayscale contrast-125 object-center parallax-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHGDXVnkWij4EY3R_yfqfT81ohYMrU_xEfajpTRDaj7frno1YCzVutjVj7ersAgMCKbBMlfo-Z58nZnlGkFtsw9QH-ZK6YSE1HDrNE744K37k8Xn9OPJ7MDfabuYqzxqSv-e50QxKvj3fWWw6rqrmumzYAT4IKFaWu6jfFYnY9MMAvoPzj4bXCAJYHBhuDLNcNg07ZoLjJP2fR_yRS0Z1eIhTZO87rOIFjuwtG_w2wXE9jkiZPspPL"/>
+<!-- Decorative element -->
+<div class="absolute -bottom-4 -left-4 w-24 h-24 border-b border-l border-gold pointer-events-none"></div>
+<div class="absolute -top-4 -right-4 w-24 h-24 border-t border-r border-gold pointer-events-none"></div>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10 text-ivory/50">
+<span class="font-label-caps text-label-caps mb-2 text-[10px]">SCROLL</span>
+<div class="w-px h-12 bg-ivory/30 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1/2 bg-ivory animate-[shimmer_2s_infinite]"></div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface max-w-[1440px] mx-auto overflow-hidden" id="about">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center fade-in-up">
+<div class="md:col-span-12 mb-stack-lg">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary uppercase text-center outline-text">THE VISION</h2>
+</div>
+<div class="md:col-span-5 relative">
+<div class="absolute inset-0 bg-surface-container-low -translate-x-4 translate-y-4 z-0"></div>
+<img class="w-full h-auto object-cover border border-primary relative z-10 aspect-[3/4]" data-alt="Artistic portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV-x0c34db441uIiNm3fKoQWeJBylkQnQdfkkjIYoNUd7p-0mL38XNiWoj3tMYjnOTULqov9JsZnsh3McSUsaV8-5cWmqONPis23Ng4ibTLoEahXVNCHcqVHfMFbqjtIO84Dh28rbJELYmOqLOVbxkHdUI_wK9LwYNzryn617fpyRkHs3GdMxaOBJu0dHgjJElYFdITg-f1kGEvRpyF3xhoXpm6BWrYgjCY9g9oV6lZCNfKJFOOJE0"/>
+</div>
+<div class="md:col-span-6 md:col-start-7 space-y-stack-lg">
+<p class="font-quote text-quote text-primary italic border-l-2 border-gold pl-stack-md">
+                "Design is not just what it looks like and feels like. Design is how it works, elevated by the pursuit of aesthetic perfection."
+            </p>
+<div class="columns-1 md:columns-2 gap-gutter text-secondary font-body-md drop-cap">
+<p class="mb-stack-sm" data-field="summary">
+                    Born from a meticulous attention to detail and a passion for the avant-garde, my approach to design bridges the gap between raw functionality and uncompromising luxury. With over a decade navigating the intersection of digital experiences and high-end editorial aesthetics, I craft narratives that resonate on a visceral level.
+                </p>
+</div>
+<div class="pt-stack-md flex gap-stack-md flex-wrap" data-repeat-chips="skills">
+<span class="font-label-caps text-label-caps border border-primary px-4 py-2 uppercase tracking-widest text-primary hover:bg-surface-container-low transition-colors duration-300">Art Direction</span>
+<span class="font-label-caps text-label-caps border border-primary px-4 py-2 uppercase tracking-widest text-primary hover:bg-surface-container-low transition-colors duration-300">UI/UX Design</span>
+<span class="font-label-caps text-label-caps border border-primary px-4 py-2 uppercase tracking-widest text-primary hover:bg-surface-container-low transition-colors duration-300">Brand Identity</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface max-w-[1600px] mx-auto" id="projects">
+<header class="mb-section-gap text-center max-w-4xl mx-auto fade-in-up">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-stack-md">Selected Works</h2>
+<div class="editorial-line max-w-xs mx-auto mb-stack-md"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A curated selection of architectural and branding endeavors, demonstrating a commitment to high-contrast minimalism and enduring structural beauty.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-section-gap md:gap-gutter">
+<!-- Project 1: Architecture -->
+<article class="editorial-card col-span-1 md:col-span-10 group fade-in-up" data-repeat="projects">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="col-span-1 md:col-span-4 flex flex-col justify-center">
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-md leading-tight" data-field="name">Coastal Sanctuary</h3>
+<div class="editorial-line mb-stack-md opacity-30"></div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg" data-field="description">A minimalist retreat carved into the coastal cliffs.</p>
+<div class="mb-stack-lg">
+<h4 class="font-label-caps text-label-caps text-primary mb-stack-sm border-b border-outline-variant pb-1 inline-block">Tech</h4>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-1" data-repeat-chips="tech">
+<li>Travertine Stone</li>
+<li>Matte Black Steel</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface max-w-5xl mx-auto" id="experience">
+<header class="mb-section-gap max-w-4xl fade-in-up">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-stack-md">Professional Journey</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">A curated timeline of editorial direction, brand strategy, and creative leadership across the luxury landscape.</p>
+</header>
+<div class="relative mb-section-gap">
+<!-- Vertical Timeline Line -->
+<div class="absolute left-0 md:left-1/4 top-0 bottom-0 w-px bg-primary transform md:-translate-x-1/2 ml-4 md:ml-0"></div>
+<div class="space-y-stack-lg">
+<!-- Experience item template: cloned once per item in data.experience -->
+<div class="relative flex flex-col md:flex-row items-start group fade-in-up" data-repeat="experience">
+<div class="absolute left-4 md:left-1/4 top-8 md:top-12 w-3 h-3 bg-primary rounded-none transform -translate-x-1/2 md:-translate-x-1/2 z-10 border border-gold"></div>
+<div class="w-full md:w-1/4 pl-12 md:pl-0 md:pr-12 md:text-right pt-4 md:pt-8 pb-4 md:pb-0">
+<span class="font-display-lg text-headline-lg timeline-year-outline block mb-2 transition-all duration-300 group-hover:text-primary group-hover:-webkit-text-stroke-0" data-field="duration">2021—Present</span>
+</div>
+<div class="w-full md:w-3/4 pl-12 md:pl-16 relative">
+<div class="border border-primary p-8 bg-transparent hover:bg-surface-container-low transition-colors duration-500 group">
+<h4 class="font-label-caps text-label-caps text-gold mb-2 tracking-widest" data-field="role">Global Creative Director</h4>
+<h3 class="font-headline-md text-headline-md text-primary mb-6" data-field="company">Maison de L'Art</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6" data-field="description">
+                            Spearheaded the complete rebrand of this heritage luxury house.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Certifications -->
+<div class="border-t border-primary pt-section-gap fade-in-up">
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-lg text-center md:text-left">Education</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-stack-md">
+<!-- Education item template -->
+<div class="flex items-center justify-between border-b border-outline-variant py-4 hover:border-primary transition-colors duration-300 group cursor-default" data-repeat="education">
+<div>
+<h4 class="font-body-md text-body-md text-primary font-medium group-hover:translate-x-2 transition-transform duration-300" data-field="degree">Master of Fine Arts, Design</h4>
+<p class="font-label-caps text-[10px] text-secondary mt-1" data-field="institution">Parsons School of Design</p>
+</div>
+<span class="font-label-caps text-label-caps text-gold" data-field="year">2014</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg mt-section-gap flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface border-t border-outline-variant">
+<div class="font-display-lg text-headline-md text-primary" data-field="name">
+        ELÉGANCE
+    </div>
+<div class="font-label-caps text-label-caps text-secondary text-center md:text-left">
+        © 2024. ALL RIGHTS RESERVED.
+    </div>
+<div class="flex gap-stack-md">
+<a class="font-label-caps text-label-caps text-secondary hover:text-tertiary transition-colors duration-300 inline-block hover:-translate-y-0.5" data-link="links.linkedin" href="#" target="_blank">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-tertiary transition-colors duration-300 inline-block hover:-translate-y-0.5" data-link="links.github" href="#" target="_blank">GitHub</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-tertiary transition-colors duration-300 inline-block hover:-translate-y-0.5" data-link="email" href="#">Contact</a>
+<button class="font-label-caps text-label-caps text-secondary hover:text-tertiary transition-colors duration-300 inline-block hover:-translate-y-0.5" onclick="downloadPortfolio(document.title)">Download</button>
+</div>
+</footer>
+<script>
+    // Intersection Observer for fade-in animations
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const parallaxImage = document.querySelector('.parallax-image');
+            if (parallaxImage) {
+                const scrollPosition = window.pageYOffset;
+                parallaxImage.style.transform = `scale(1.1) translateY(${scrollPosition * 0.15}px)`;
+            }
+        });
+    });
+</script>
+</body></html>
