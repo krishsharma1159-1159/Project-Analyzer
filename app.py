@@ -1,7 +1,7 @@
 import os
 import json
 import logging
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import pdfplumber
@@ -21,7 +21,7 @@ if not api_key:
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-flash-latest")
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder=None)
 CORS(app)
 
 UPLOAD_FOLDER = 'uploads'
@@ -118,6 +118,34 @@ def generate_resume_json(resume_text):
     except json.JSONDecodeError:
         logging.error(f"JSON parse failed. Raw output: {raw_output}")
         return {"error": "Failed to parse JSON from Gemini", "raw_output": raw_output}
+
+# ---------- Frontend routes ----------
+# Serves the static site (frontend.html, the 4 portfolio templates, and the
+# shared render script) from the SAME Flask process, so `python app.py` is
+# the only command needed. Only these known files are exposed — not the
+# whole project folder (keeps .env, uploads/, etc. off-limits).
+FRONTEND_DIR = os.path.dirname(os.path.abspath(__file__))
+ALLOWED_STATIC_FILES = {
+    'frontend.html',
+    'portfolio1.html',
+    'portfolio2.html',
+    'portfolio3.html',
+    'portfolio4.html',
+    'portfolio-render.js',
+}
+
+@app.route('/')
+def serve_frontend():
+    return send_from_directory(FRONTEND_DIR, 'frontend.html')
+ 
+ 
+@app.route('/<path:filename>')
+def serve_static_file(filename):
+    if filename not in ALLOWED_STATIC_FILES:
+        return jsonify({"error": "Not found"}), 404
+    return send_from_directory(FRONTEND_DIR, filename)
+
+
 
 # ---------- Routes ----------
 
